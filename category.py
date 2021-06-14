@@ -19,6 +19,8 @@ def search(entry,cat):
             if not os.path.exists("Category/"+i.replace("-", " ")):
                 os.mkdir("Category/"+i.replace("-", " "))
                 os.mkdir("Category/"+i.replace("-", " ") + "/images")
+        elif nb == 51:
+            break
         else:
             nb += 1
 
@@ -26,5 +28,8 @@ def search(entry,cat):
 
 entry = input("Entrez la catégorie : ")
 bat = search(entry,cat)
-book_list(bat)
+if bat is True:
+    book_list(bat)
+else:
+    print("Catégorie incorrecte.\nRelancez le programme.")
 
