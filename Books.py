@@ -83,10 +83,20 @@ def book_list(myurl):
         description = page_soup.find("p", class_=False).text
         #print("Description : " + description)
 
-        titreimg = ""
-        special_chars = (":","/","\'","#","$","%","^","*","\\","?","<",">","|")
-        for special_char in special_chars:
-            titreimg = titre.replace(special_char, '-')
+        titreimg = titre.replace(":", "-")
+        titreimg = titreimg.replace("/", "-")
+        titreimg = titreimg.replace("(", "-")
+        titreimg = titreimg.replace(")", "-")
+        titreimg = titreimg.replace("#", "-")
+        titreimg = titreimg.replace("$", "-")
+        titreimg = titreimg.replace("%", "-")
+        titreimg = titreimg.replace("^", "-")
+        titreimg = titreimg.replace("*", "-")
+        titreimg = titreimg.replace("\'", "-")
+        titreimg = titreimg.replace("\"", "-")
+        titreimg = titreimg.replace("?", "-")
+        titreimg = titreimg.replace("<", "-")
+        titreimg = titreimg.replace(">", "-")
 
         urllib.request.urlretrieve(img, "Category/" + category + '/images/' + titreimg + ".jpg")
 
@@ -184,9 +194,20 @@ def book_pages(myurl,pager):
             description = page_soup.find("p", class_=False).text
             #print("Description : " + description)
 
-            special_chars = ":/()#$%^*\"\'’?\\<>|"
-            for special_char in special_chars:
-                titreimg = titre.replace(special_char, '-')
+            titreimg = titre.replace(":", "-")
+            titreimg = titreimg.replace("/", "-")
+            titreimg = titreimg.replace("(", "-")
+            titreimg = titreimg.replace(")", "-")
+            titreimg = titreimg.replace("#", "-")
+            titreimg = titreimg.replace("$", "-")
+            titreimg = titreimg.replace("%", "-")
+            titreimg = titreimg.replace("^", "-")
+            titreimg = titreimg.replace("*", "-")
+            titreimg = titreimg.replace("\'", "-")
+            titreimg = titreimg.replace("\"", "-")
+            titreimg = titreimg.replace("?", "-")
+            titreimg = titreimg.replace("<", "-")
+            titreimg = titreimg.replace(">", "-")
 
             urllib.request.urlretrieve(img, "Category/"+category + '/images/' + titreimg + ".jpg")
 
