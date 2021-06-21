@@ -10,7 +10,7 @@ from utils import replace_unknown_characters
 from utils import create_docks
 
 
-def scrape_all():
+def scrape_all_books():
     my_url = 'http://books.toscrape.com/index.html'
     client = uReq(my_url)
     page = client.read()
