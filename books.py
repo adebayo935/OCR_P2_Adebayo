@@ -6,6 +6,8 @@ from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 from utils import replace_special_characters
 
+url_site = 'http://books.toscrape.com/'
+
 
 def book_list(my_url):
     new_url = my_url+'/index.html'
@@ -14,9 +16,9 @@ def book_list(my_url):
     client.close()
     page_soup = soup(page, "html.parser")
 
-    cat = page_soup.find("h1").text
+    category = page_soup.find("h1").text
     file = "Books.csv"
-    f = open("Category/"+cat+"/"+file, "w")
+    f = open("Category/"+category+"/"+file, "w")
     headers = "URL, UPC, Title, Price including tax, Price excluding tax," \
               "Number available, Category, Rating, Image, Description\n"
     f.write(headers)
@@ -37,7 +39,7 @@ def book_list(my_url):
     for book in all_books:
 
         url = book.find("a", href=True)["href"]
-        product_url = url.replace("../../../", "http://books.toscrape.com/catalogue/")
+        product_url = url.replace("../../../", url_site+"catalogue/")
 
         my_url2 = product_url
         client = uReq(my_url2)
@@ -52,7 +54,7 @@ def book_list(my_url):
         category = category_tab[3].text
 
         img_link = page_soup.find("img", src=True)["src"]
-        img = img_link.replace('../..', "http://books.toscrape.com/")
+        img = img_link.replace('../..', url_site)
 
         info = page_soup.find_all("tr")
         for tr in info:
@@ -82,7 +84,7 @@ def book_list(my_url):
 
         line = product_url, universal_product_code, title, price_including_tax, price_excluding_tax, number_available, \
             category, review_rating, img, description
-        print(line)
+        print(title)
         f.write(str(line))
         f.write("\n")
 
@@ -116,7 +118,7 @@ def book_pages(my_url, pager):
         for book in all_books:
 
             url = book.find("a", href=True)["href"]
-            product_url = url.replace("../../../", "http://books.toscrape.com/catalogue/")
+            product_url = url.replace("../../../", url_site+"catalogue/")
 
             my_url2 = product_url
             client = uReq(my_url2)
@@ -131,7 +133,7 @@ def book_pages(my_url, pager):
             category = category_tab[3].text
 
             img_link = page_soup.find("img", src=True)["src"]
-            img = img_link.replace('../..', "http://books.toscrape.com/")
+            img = img_link.replace('../..', url_site)
 
             info = page_soup.find_all("tr")
             for tr in info:
@@ -161,6 +163,6 @@ def book_pages(my_url, pager):
 
             line = product_url, universal_product_code, title, price_including_tax, price_excluding_tax, \
                 number_available, category, review_rating, img, description
-            print(line)
+            print(title)
             f.write(str(line))
             f.write("\n")
