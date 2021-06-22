@@ -1,6 +1,9 @@
+# -*- coding: utf-8 -*-
 import os
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
+
+# Remplacer les caractères spéciaux dans le texte de l'image
 
 
 def replace_special_characters(img_title):
@@ -10,9 +13,11 @@ def replace_special_characters(img_title):
 
     return img_title
 
+# Remplacer les caractères spéciaux dans le texte de la description
+
 
 def replace_unknown_characters(description):
-    characters = ["‽", "\\", "/", "―", "#", "%", "‒", "”", "“"]
+    characters = ["‽", "\\", "/", "―", "#", "%", "‒", "”", "“","—", "”", ":","\"","\'"]
     for character in characters:
         description = description.replace(character, "-")
 
@@ -40,14 +45,14 @@ def category_list():
     return category_tab
 
 
-def create_docks(cat):
-    for i in cat:
-        i = i.replace("-", " ")
-        if not os.path.exists(i):
-            os.mkdir("All Books/" + i)
-            os.mkdir("All Books/" + i + "/images")
+def create_docks(category):
+    for cat in category:
+        cat = cat.replace("-", " ")
+        if not os.path.exists(cat):
+            os.mkdir("All Books/" + cat)
+            os.mkdir("All Books/" + cat + "/images")
             file = "Books.csv"
-            f = open("All Books/" + i + "/" + file, "w")
+            f = open("All Books/" + cat + "/" + file, "w")
             headers = "URL, UPC, Title, Price including tax, Price excluding tax," \
                       "Number available, Category, Rating, Image, Description\n"
             f.write(headers)
