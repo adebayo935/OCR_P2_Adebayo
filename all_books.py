@@ -9,9 +9,11 @@ from utils import replace_special_characters
 from utils import replace_unknown_characters
 from utils import create_docks
 
+url_site = 'http://books.toscrape.com/'
+
 
 def scrape_all_books():
-    my_url = 'http://books.toscrape.com/index.html'
+    my_url = url_site+'index.html'
     client = uReq(my_url)
     page = client.read()
     client.close()
@@ -36,9 +38,9 @@ def scrape_all_books():
     for book in all_books:
 
         url = book.find("a", href=True)["href"]
-        product_url = ("http://books.toscrape.com/"+url)
+        product_url = (url_site+url)
 
-        my_url = ("http://books.toscrape.com/{}".format(book.find("a", href=True)["href"]))
+        my_url = (url_site+str(book.find("a", href=True)["href"]))
         client = uReq(my_url)
         page = client.read()
         client.close()
@@ -51,7 +53,7 @@ def scrape_all_books():
         category = category_tab[3].text
 
         img_link = page_soup.find("img", src=True)["src"]
-        img = img_link.replace('../..', "http://books.toscrape.com/")
+        img = img_link.replace('../..', url_site)
 
         info = page_soup.find_all("tr")
         for tr in info:
@@ -70,8 +72,8 @@ def scrape_all_books():
                 review_rating = td.text
 
         description = page_soup.find("p", class_=False)
-        if description is not None:
-            description = description.text
+        if description is not None and description.text:
+            description = replace_unknown_characters(description.text)
         else:
             description = "No description"
 
@@ -86,7 +88,7 @@ def scrape_all_books():
         f = open("All Books/"+category + "/" + file, "a")
         f.write(str(line))
         f.write("\n")
-        print(line)
+        print(title)
 
     for i in range(2, int(pager[3]) + 1):
 
@@ -96,19 +98,18 @@ def scrape_all_books():
         number_available = ""
         review_rating = ""
 
-        new_url = "http://books.toscrape.com/catalogue/page-" + str(i) + ".html"
+        new_url = url_site+"catalogue/page-" + str(i) + ".html"
         print("Page " + str(i))
         client = uReq(new_url)
         page = client.read()
         client.close()
         page_soup = soup(page, "html.parser")
-
         all_books = page_soup.find_all("article", {"class": "product_pod"})
 
         for book in all_books:
 
             url = book.find("a", href=True)["href"]
-            product_url = "http://books.toscrape.com/catalogue/"+url
+            product_url = url_site+"catalogue/"+url
 
             my_url2 = product_url
             client = uReq(my_url2)
@@ -123,7 +124,7 @@ def scrape_all_books():
             category = category_tab[3].text
 
             img_link = page_soup.find("img", src=True)["src"]
-            img = img_link.replace('../..', "http://books.toscrape.com/")
+            img = img_link.replace('../..', url_site)
 
             info = page_soup.find_all("tr")
             for tr in info:
@@ -143,9 +144,8 @@ def scrape_all_books():
                     review_rating = td.text
 
             description = page_soup.find("p", class_=False)
-            if description is not None:
-                description = description.text
-                description = replace_unknown_characters(description)
+            if description is not None and description.text:
+                description = replace_unknown_characters(description.text)
             else:
                 description = "No description"
 
@@ -161,4 +161,4 @@ def scrape_all_books():
 
             f.write(str(line))
             f.write("\n")
-            print(line)
+            print(title)
