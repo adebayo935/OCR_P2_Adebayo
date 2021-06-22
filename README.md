@@ -52,25 +52,4 @@ Ce fichier contient toutes les fonctions annexes utilisées dans les autres fich
     create_docks s'occupe de créer dans All Books les dossiers de chaque catégorie et des images, créer un fichier csv "book" et écrire les entêtes dans celui-ci. 
     
     
-Lancement du scrapping
-Pour pouvoir utiliser le projet, il vous faudra au préalable récupérer l'intégralité du dossier OC_P2_Projet. Dans ce dossier, vous trouverez :
 
-le dossier books
-le fichier __init__.py (qui est vierge)
-le fichier main.py
-le fichier requirements.txt
-Dans un premier temps, vous devrez avoir installé si ce n'est pas encore le cas, les modules présents dans le fichier requirements.txt, dans votre environnement python.
-Ensuite, executez avec python le fichier main.py. A l'exécution du fichier main.py, plusieurs fichiers seront créés :
-
-Un dossier nommé All Books est créé là où sera exécuté le fichier main.py. dans ce dossier, chaque catégorie possède un dossier propre qui elle même possède un fichier csv et un dossier images qui contient les images de chaque livre
-
-Un dossier nommé Category dans lequel un dossier par catégorie est créé qui va contenir les mêmes infos que All Books
-
-Un texte s'affiche demandant quel programme exécuter :
-
-  1 Pour le scroll complet du site
-  2 Pour le scroll d'une catégorie particulière
-  
-Après avoir tapé le choix, chaque titre et son url sont affichés dans la console, chaque page scrollée est indiquée.
-
-Attention : Pour relancer le programme 1 il faut supprimer l'ensemble du contenu du dossier All Books!
