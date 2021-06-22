@@ -3,17 +3,19 @@ from books import book_list
 from utils import category_list
 import os
 
+# Vérifier si la catégorie existe et créer les dossiers
 
-def search(p1, p2):
+
+def search(entry, category):
     nb = 1
     my_url = ""
-    for p in p2:
-        if p1 == p:
-            my_url = "http://books.toscrape.com/catalogue/category/books/"+p1+"_"+str(nb)
+    for cat in category:
+        if entry == cat:
+            my_url = "http://books.toscrape.com/catalogue/category/books/"+entry+"_"+str(nb)
             print(my_url)
-            if not os.path.exists("Category/"+p.replace("-", " ")):
-                os.mkdir("Category/"+p.replace("-", " "))
-                os.mkdir("Category/"+p.replace("-", " ") + "/images")
+            if not os.path.exists("Category/"+cat.replace("-", " ")):
+                os.mkdir("Category/"+cat.replace("-", " "))
+                os.mkdir("Category/"+cat.replace("-", " ") + "/images")
         elif nb == 51:
             break
         else:
@@ -21,13 +23,15 @@ def search(p1, p2):
 
     return my_url
 
+# Récuperer la catégorie et lancer le scraping
+
 
 def scrape_category():
-    cat = category_list()
-    for i in cat:
-        i.replace("-", " ")
+    category = category_list()
+    for cat in category:
+        cat.replace("-", " ")
     print(cat)
 
     entry = input("Enter category : ")
-    bat = search(entry, cat)
-    book_list(bat)
+    result = search(entry, category)
+    book_list(result)
