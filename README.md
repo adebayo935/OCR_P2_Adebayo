@@ -53,15 +53,7 @@ Ce fichier contient toutes les fonctions annexes utilisées dans les autres fich
 # Lancement du scrapping
 
 
-Pour pouvoir utiliser le projet, il vous faudra au préalable récupérer l'intégralité du dossier OC_P2_Projet. Dans ce dossier, vous trouverez :
-
-le fichier main.py
-le fichier all_books.py
-le fichier books.py
-le fichier category.py
-le fichier requirements.txt
-
-
+Pour pouvoir utiliser le projet, il vous faudra au préalable récupérer l'intégralité du dossier OC_P2_Projet.
 
 Dans un premier temps, vous devez installer les modules présents dans le fichier requirements.txt, dans votre environnement python.
 
