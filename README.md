@@ -55,9 +55,10 @@ Ce fichier contient toutes les fonctions annexes utilisées dans les autres fich
 
 Pour pouvoir utiliser le projet, il vous faudra au préalable récupérer l'intégralité du dossier OC_P2_Projet. Dans ce dossier, vous trouverez :
 
-le dossier books
-le fichier __init__.py (qui est vierge)
 le fichier main.py
+le fichier all_books.py
+le fichier books.py
+le fichier category.py
 le fichier requirements.txt
 
 
