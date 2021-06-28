@@ -88,7 +88,7 @@ def scrape_all_books():
         f = open("All Books/"+category + "/" + file, "a")
         f.write(str(line))
         f.write("\n")
-        print(title)
+        print(title+" : "+product_url)
 
     for i in range(2, int(pager[3]) + 1):
 
@@ -161,5 +161,5 @@ def scrape_all_books():
 
             f.write(str(line))
             f.write("\n")
-            print(title)
+            print(title+" : "+product_url)
             
