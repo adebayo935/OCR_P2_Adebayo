@@ -45,7 +45,7 @@ Fichier utils.py
 
 Ce fichier contient toutes les fonctions annexes utilisées dans les autres fichiers :
     replace_unknown_characters nettoie les caractères spéciaux dans le texte de la description des livres
-    replacce_special_characters nettoie les caracctères spéciaux dans le texte de l'image du livre
+    replace_special_characters nettoie les caracctères spéciaux dans le texte de l'image du livre
     category_list récupère toutes les catégories du site et les mets dans une liste
     create_docks s'occupe de créer dans All Books les dossiers de chaque catégorie et des images, créer un fichier csv "book" et écrire les entêtes dans celui-ci. 
     
