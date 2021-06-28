@@ -74,8 +74,8 @@ Un dossier nommé Category dans lequel un dossier par catégorie est créé qui 
 
 Un texte s'affiche demandant quel programme exécuter :
 
-  1 Pour le scroll complet du site
-  2 Pour le scroll d'une catégorie particulière
+ 1 Pour le scroll complet du site
+ 2 Pour le scroll d'une catégorie particulière
   
 Après avoir tapé le choix, chaque titre et son url sont affichés dans la console, chaque page scrollée est indiquée.
 
