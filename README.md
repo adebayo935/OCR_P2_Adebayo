@@ -8,7 +8,6 @@ Ce projet a pour but de récupérer tous les éléments des livres, par catégor
 Les éléments récupérés sont :
 
 product_page_url : l'url de la page du livre
-
 universal_product_code : le code produit UPC
 title : le titre du livre
 price_including_tax : le prix du livre incluant la taxe
