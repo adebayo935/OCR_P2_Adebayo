@@ -84,7 +84,7 @@ def book_list(my_url):
 
         line = product_url, universal_product_code, title, price_including_tax, price_excluding_tax, number_available, \
             category, review_rating, img, description
-        print(title)
+        print(title+" : "+product_url)
         f.write(str(line))
         f.write("\n")
 
@@ -163,6 +163,6 @@ def book_pages(my_url, pager):
 
             line = product_url, universal_product_code, title, price_including_tax, price_excluding_tax, \
                 number_available, category, review_rating, img, description
-            print(title)
+            print(title+" : "+product_url)
             f.write(str(line))
             f.write("\n")
