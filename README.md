@@ -65,8 +65,20 @@ le dossier books
 le fichier __init__.py (qui est vierge)
 le fichier main.py
 le fichier requirements.txt
-Dans un premier temps, vous devrez avoir installé si ce n'est pas encore le cas, les modules présents dans le fichier requirements.txt, dans votre environnement python.
-Ensuite, executez avec python le fichier main.py. A l'exécution du fichier main.py, plusieurs fichiers seront créés :
+
+Dans un premier temps, vous devez installer les modules présents dans le fichier requirements.txt, dans votre environnement python.
+
+Executez les commandes suivantes :
+
+python -m venv {Chemin\Du\Dossier\venv}  Exemple C:\Users\33578\Desktop\Projet-2\venv (Création de l'environnement virtuel dans le dossier voulu)
+
+venv\scripts\activate.bat (Activation de l'environnement virtuel)
+
+pip install bs4 (Installation de BeautifulSoup dans l'environnement)
+
+Ensuite, executez avec python le fichier main.py. 
+
+A l'exécution du fichier main.py, plusieurs fichiers seront créés :
 
 Un dossier nommé All Books est créé là où sera exécuté le fichier main.py. dans ce dossier, chaque catégorie possède un dossier propre qui elle même possède un fichier csv et un dossier images qui contient les images de chaque livre
 
@@ -75,6 +87,7 @@ Un dossier nommé Category dans lequel un dossier par catégorie est créé qui 
 Un texte s'affiche demandant quel programme exécuter :
 
  1 Pour le scroll complet du site
+ 
  2 Pour le scroll d'une catégorie particulière
   
 Après avoir tapé le choix, chaque titre et son url sont affichés dans la console, chaque page scrollée est indiquée.
