@@ -1,5 +1,9 @@
 # Projet-2
 
+
+# Description
+
+
 Ce projet a pour but de récupérer tous les éléments des livres, par catégorie, se trouvant sur le site http://books.toscrape.com/.
 Les éléments récupérés sont :
 
@@ -52,7 +56,7 @@ Ce fichier contient toutes les fonctions annexes utilisées dans les autres fich
     create_docks s'occupe de créer dans All Books les dossiers de chaque catégorie et des images, créer un fichier csv "book" et écrire les entêtes dans celui-ci. 
     
     
-Lancement du scrapping
+# Lancement du scrapping
 
 
 Pour pouvoir utiliser le projet, il vous faudra au préalable récupérer l'intégralité du dossier OC_P2_Projet. Dans ce dossier, vous trouverez :
