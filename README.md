@@ -16,15 +16,9 @@ number_available : le nombre d'exemplaires disponibles
 product_description : la description du livre (le résumé)
 category : la catégorie du livre
 review_rating : la version du livre
-image_url : l'url de l'image du livre \
+image_url : l'url de l'image du livre
 
-A l'execution du fichier main.py deux dossiers sont créés :
 
-  All Books : Dans lequel sera créé chaque dossier de chaque catégorie du site
-  Category : Dans lequel sera créé chaque catégorie demandée par l'utilisateur
-  
-Un texte s'affiche demandant le programme à executer.
-  
 
 Fichier all_books.py
 
@@ -66,6 +60,8 @@ le fichier __init__.py (qui est vierge)
 le fichier main.py
 le fichier requirements.txt
 
+
+
 Dans un premier temps, vous devez installer les modules présents dans le fichier requirements.txt, dans votre environnement python.
 
 Executez les commandes suivantes :
@@ -77,6 +73,8 @@ venv\scripts\activate.bat (Activation de l'environnement virtuel)
 pip install bs4 (Installation de BeautifulSoup dans l'environnement)
 
 Ensuite, executez avec python le fichier main.py. 
+
+
 
 A l'exécution du fichier main.py, plusieurs fichiers seront créés :
 
