@@ -70,7 +70,7 @@ Dans un premier temps, vous devez installer les modules présents dans le fichie
 
 Executez les commandes suivantes :
 
-python -m venv {Chemin\Du\Dossier\venv}  Exemple C:\Users\33578\Desktop\Projet-2\venv (Création de l'environnement virtuel dans le dossier voulu)
+python -m venv {Chemin\Du\Projet\venv}  Exemple C:\Users\33578\Desktop\Projet-2\venv (Création de l'environnement virtuel dans le dossier voulu)
 
 venv\scripts\activate.bat (Activation de l'environnement virtuel)
 
