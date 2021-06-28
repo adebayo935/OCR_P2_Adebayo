@@ -162,3 +162,4 @@ def scrape_all_books():
             f.write(str(line))
             f.write("\n")
             print(title)
+            
