@@ -37,7 +37,7 @@ Il contient deux fonctions :
 Fichier category.py
 
 Ce fichier contient le code qui permet à l'utilisateur de sélectionner une catégorie à scroller en particulier. Une sélection et un champ s'affichent afin de permettre à celui-ci de taper directement la catégorie voulue. Il contient deux fonctions :
-    search récupère l'entrée de l'utilisateur et vérifie si la catégorie entrée est bien en base, si c'est le cas elle créée un dossier pour la catégorie en question et récupère     l'url de la première page de celle-ci
+    search récupère l'entrée de l'utilisateur et vérifie si la catégorie entrée est bien en base, si c'est le cas elle créé un dossier pour la catégorie en question et récupère     l'url de la première page de celle-ci
     scrape_category récupère toutes les catégories disponibles sur le site, les réécrit dans le bon format et les range dans une liste
     
 
