@@ -104,6 +104,6 @@ python main.py
 
 A l'exécution du fichier main.py, plusieurs fichiers seront créés :
 
-Un dossier nommé All Books est créé là où sera exécuté le fichier main.py. dans ce dossier, chaque catégorie possède un dossier propre qui elle même possède un fichier csv et un dossier images qui contient les images de chaque livre
+Un dossier nommé All Books est créé là où sera exécuté le fichier main.py. Dans ce dossier, chaque catégorie possède un dossier propre qui elle même possède un fichier csv et un dossier images qui contient les images de chaque livre
 
 Un dossier nommé Category dans lequel un dossier par catégorie est créé qui va contenir les mêmes infos que All Books
