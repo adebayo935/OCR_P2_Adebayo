@@ -18,7 +18,7 @@ def book_list(my_url):
 
     category = page_soup.find("h1").text
     file = "Books.csv"
-    f = open("Category/"+category+"/"+file, "w")
+    f = open("Category/"+category+"/"+file, "a")
     headers = "URL, UPC, Title, Price including tax, Price excluding tax," \
               "Number available, Category, Rating, Image, Description\n"
     f.write(headers)
