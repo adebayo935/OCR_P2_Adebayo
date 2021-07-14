@@ -84,9 +84,9 @@ def scrape_all_books():
         line = product_url, universal_product_code, title, price_including_tax, price_excluding_tax, number_available, \
             category, review_rating, img, description
 
-        file = "Books.csv"
+        file = category+".csv"
         f = open("All Books/"+category + "/" + file, "a")
-        f.write(str(line))
+        f.write(str(line).replace("(", ""))
         f.write("\n")
         print(title+" : "+product_url)
 
@@ -156,10 +156,10 @@ def scrape_all_books():
 
             urllib.request.urlretrieve(img, "All Books/" + category + './images/' + img_title + ".jpg")
 
-            file = "Books.csv"
+            file = category+".csv"
             f = open("All Books/"+category + "/" + file, "a")
 
-            f.write(str(line))
+            f.write(str(line).replace("(", ""))
             f.write("\n")
             print(title+" : "+product_url)
             
