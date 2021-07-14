@@ -17,7 +17,7 @@ def book_list(my_url):
     page_soup = soup(page, "html.parser")
 
     category = page_soup.find("h1").text
-    file = "Books.csv"
+    file = category+".csv"
     f = open("Category/"+category+"/"+file, "a")
     headers = "URL, UPC, Title, Price including tax, Price excluding tax," \
               "Number available, Category, Rating, Image, Description\n"
@@ -85,7 +85,7 @@ def book_list(my_url):
         line = product_url, universal_product_code, title, price_including_tax, price_excluding_tax, number_available, \
             category, review_rating, img, description
         print(title+" : "+product_url)
-        f.write(str(line))
+        f.write(str(line).replace("(", ""))
         f.write("\n")
 
     if pager is not None:
@@ -110,7 +110,7 @@ def book_pages(my_url, pager):
 
         cat = page_soup.find("h1").text
 
-        file = "Books.csv"
+        file = cat+".csv"
         f = open("Category/"+cat + "/" + file, "w")
 
         all_books = page_soup.find_all("article", {"class": "product_pod"})
@@ -164,5 +164,5 @@ def book_pages(my_url, pager):
             line = product_url, universal_product_code, title, price_including_tax, price_excluding_tax, \
                 number_available, category, review_rating, img, description
             print(title+" : "+product_url)
-            f.write(str(line))
+            f.write(str(line).replace("(", ""))
             f.write("\n")
